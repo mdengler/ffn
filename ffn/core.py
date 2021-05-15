@@ -1834,7 +1834,9 @@ def calc_erc_weights(
     return pd.Series(erc_weights, index=returns.columns, name="erc")
 
 
-def get_num_days_required(offset, period="d", perc_required=0.90):
+def get_num_days_required(
+    offset, period="d", perc_required=0.90, trading_days_per_year=252
+):
     """
     Estimates the number of days required to assume that data is OK.
 
@@ -2339,7 +2341,9 @@ def infer_nperiods(data, trading_days_per_year=None):
                 num_str = freq[:-1]
                 num = int(num_str)
                 return num * whole_periods_str_to_nperiods(whole_periods_str)
-        except:
+        except KeyboardInterrupt:
+            raise
+        except BaseException:
             return None
 
     return None
