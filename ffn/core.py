@@ -1726,7 +1726,7 @@ def _erc_weights_ccd(x0, cov, b, maximum_iterations, tolerance):
         Griveau-Billion, Theophile and Richard, Jean-Charles and Roncalli,
         Thierry, A Fast Algorithm for Computing High-Dimensional Risk Parity
         Portfolios (2013).
-        Available at SSRN: https://ssrn.com/abstract=23trading_days_per_year55
+        Available at SSRN: https://ssrn.com/abstract=2325255
 
     """
     n = len(x0)
