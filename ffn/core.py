@@ -2444,7 +2444,7 @@ def to_ulcer_performance_index(prices, rf=0.0, nperiods=None):
 
     """
     if nperiods is None:
-        nperiods = infer_freq(returns)
+        nperiods = infer_freq(prices)
 
     if isinstance(rf, float) and rf != 0 and nperiods is None:
         raise Exception("nperiods must be set if rf != 0 and rf is not a price series")
